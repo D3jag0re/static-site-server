@@ -63,3 +63,22 @@ jobs:
    steps: 
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Install NetData, Stress, and fio
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ needs.build_droplet.outputs.ipv4 }}
+        username: root
+        key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+        script: |
+          echo "updating packages............................................................."
+          apt update
+          echo "installing nginx..............................................................."
+          apt install nginx -y
+          echo "start and enable Nginx........................................................."
+          systemctl start nginx
+          systemctl enable nginx
+          echo "rsync copy files................................................................."
+          rsync -av ./siteFiles/ /var/www/html/
+          echo "restart Nginx service.........................................................."
+          service nginx restart

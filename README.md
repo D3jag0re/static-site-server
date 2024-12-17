@@ -18,8 +18,8 @@ Here are the requirements for this project:
 
 - [X] Register and setup a remote linux server on any provider e.g. a simple droplet on DigitalOcean which gives you $200 in free credits with the link. Alternatively, use AWS or any other provider.
 - [ ] Make sure that you can connect to your server using SSH.
-- [ ] Install and configure nginx to serve a static site.
-- [ ] Create a simple webpage with basic HTML, CSS and image files.
+- [X] Install and configure nginx to serve a static site.
+- [X] Create a simple webpage with basic HTML, CSS and image files.
 - [ ] Use rsync to update a remote server with a local static site.
 - [ ] If you have a domain name, point it to your server and serve your static site from there. Alternatively, set up your nginx server to serve the static site from the server’s IP address.
 
