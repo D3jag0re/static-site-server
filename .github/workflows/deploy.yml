@@ -64,7 +64,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Install NetData, Stress, and fio
+    - name: Install Nginx and copy site files
       uses: appleboy/ssh-action@v1.2.0
       with:
         host: ${{ needs.build_droplet.outputs.ipv4 }}
@@ -79,6 +79,6 @@ jobs:
           systemctl start nginx
           systemctl enable nginx
           echo "rsync copy files................................................................."
-          rsync -av ./siteFiles/ /var/www/html/
+          rsync -av ./siteFiles/ root@${{ needs.build_droplet.outputs.ipv4 }}:/var/www/html/
           echo "restart Nginx service.........................................................."
           service nginx restart
