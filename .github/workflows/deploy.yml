@@ -63,8 +63,18 @@ jobs:
    steps: 
     - name: Checkout repository
       uses: actions/checkout@v4
+ 
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@7.0.1
+      with:
+        switches: -avzr --delete
+        path: ./siteFiles/
+        remote_path: /tmp/
+        remote_host: ${{ needs.build_droplet.outputs.ipv4 }}
+        remote_user: root
+        remote_key: ${{ secrets.DO_SSH_PRIVATE_KEY }}     
 
-    - name: Install Nginx and copy site files
+    - name: Install Nginx and copy local site files
       uses: appleboy/ssh-action@v1.2.0
       with:
         host: ${{ needs.build_droplet.outputs.ipv4 }}
@@ -79,6 +89,6 @@ jobs:
           systemctl start nginx
           systemctl enable nginx
           echo "rsync copy files................................................................."
-          rsync -av -e "ssh -o StrictHostKeyChecking=no" ./siteFiles/ root@localhost:/var/www/html/
+          rsync -av /tmp/siteFiles /var/www/html/
           echo "restart Nginx service.........................................................."
           service nginx restart

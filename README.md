@@ -45,4 +45,4 @@ Once you have completed the project, you should have a basic understanding of ho
 
 ## Lessons Learned
 
-- Initially had rsync copying local as I forgot the runner checks it out locally and not on remote server (brain fart)
+- Brain fart when checking out repo / rsync files 
