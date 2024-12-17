@@ -42,6 +42,7 @@ Once you have completed the project, you should have a basic understanding of ho
 
 - Going to use terraform to build droplet 
 - Going to use GitHub Actions to do all the setup
+- Had to add wait period as rsync was failing due to droplet not being fully ready if deployed in same run (subsequent runs always were successful if droplet was already provisioned)
 
 ## Lessons Learned
 

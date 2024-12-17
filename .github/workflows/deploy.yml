@@ -63,6 +63,9 @@ jobs:
    steps: 
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Wait for Droplet to be ready for SSH connections
+      run: sleep 15
  
     - name: rsync deployments
       uses: burnett01/rsync-deployments@7.0.1
