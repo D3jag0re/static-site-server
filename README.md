@@ -16,7 +16,7 @@ The goal of this project is to help you understand the basics of setting up a we
 
 Here are the requirements for this project:
 
-- [ ] Register and setup a remote linux server on any provider e.g. a simple droplet on DigitalOcean which gives you $200 in free credits with the link. Alternatively, use AWS or any other provider.
+- [X] Register and setup a remote linux server on any provider e.g. a simple droplet on DigitalOcean which gives you $200 in free credits with the link. Alternatively, use AWS or any other provider.
 - [ ] Make sure that you can connect to your server using SSH.
 - [ ] Install and configure nginx to serve a static site.
 - [ ] Create a simple webpage with basic HTML, CSS and image files.
