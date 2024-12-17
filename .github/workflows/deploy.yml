@@ -79,6 +79,6 @@ jobs:
           systemctl start nginx
           systemctl enable nginx
           echo "rsync copy files................................................................."
-          rsync -av ./siteFiles/ root@${{ needs.build_droplet.outputs.ipv4 }}:/var/www/html/
+          rsync -av -e "ssh -o StrictHostKeyChecking=no" ./siteFiles/ root@localhost:/var/www/html/
           echo "restart Nginx service.........................................................."
           service nginx restart
