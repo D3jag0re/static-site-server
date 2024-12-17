@@ -89,6 +89,6 @@ jobs:
           systemctl start nginx
           systemctl enable nginx
           echo "rsync copy files................................................................."
-          rsync -av /tmp/siteFiles /var/www/html/
+          rsync -av /tmp/siteFiles/ /var/www/html/
           echo "restart Nginx service.........................................................."
           service nginx restart

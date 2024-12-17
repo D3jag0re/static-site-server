@@ -46,3 +46,4 @@ Once you have completed the project, you should have a basic understanding of ho
 ## Lessons Learned
 
 - Brain fart when checking out repo / rsync files 
+- Copying directory vs viles in directory 
