@@ -1,10 +1,10 @@
 # static-site-server
 
-This is based off the DevOps Roadmap Project [Statis Site Server](https://roadmap.sh/projects/static-site-server)
+This is based off the DevOps Roadmap Project [Static Site Server](https://roadmap.sh/projects/static-site-server)
 
 Setup a basic linux server and configure it to serve a static site. 
 
-This is number 6 of [21 DevOps Projects](https://roadmap.sh/devops/projects) as per roadmap.sh
+This is number 6 of [DevOps Projects](https://roadmap.sh/devops/projects) as per roadmap.sh
 
 ## Description From Site 
 
